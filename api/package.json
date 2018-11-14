@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "generate-data": "npx babel-node ./dataGenerator",
+    "start-api": "npx babel-node ./server"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "faker": "^4.1.0",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0"
+  }
+}
