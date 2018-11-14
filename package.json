@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start-api": "npx babel-node ./api/server"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0"
+  }
+}
