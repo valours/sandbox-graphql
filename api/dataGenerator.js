@@ -8,6 +8,15 @@ userGenerator = () => {
   }
 }
 
+usersGenerator = () => {
+  const users = [];
+  for (let index = 0; index < 40; index++) {
+    users.push(userGenerator());
+  }
+  return users;
+}
+
 module.exports = {
   userGenerator,
+  usersGenerator,
 }

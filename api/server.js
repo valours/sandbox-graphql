@@ -2,17 +2,20 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 
+const { usersGenerator } = require('./dataGenerator');
+
 // Construct a schema, using GraphQL schema language
-// TODO: Mettre à jour le schema avec des utilisateurs
 const schema = buildSchema(`
   type Query {
     random: Float!
     hello: String
-    user: User
+    user: User,
+    users: [User]
   }
 
   type User {
-    name: String
+    name: String,
+    email: String,
   }
 `);
 
@@ -25,9 +28,8 @@ const root = {
   },
   user: () => ({
     name: 'damn',
-  })
-
-  //TODO: ajouter la méthod pour renvoyer les utilisateurs
+  }),
+  users: () => ([...usersGenerator()])
 };
 
 const app = express();
