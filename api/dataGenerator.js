@@ -1,8 +1,13 @@
-const fs = require('fs');
+const faker = require('faker/locale/fr');
 
 // TODO: générer des utilisateurs, ajouter en parametres le nombres de user
-const userGenerator = () => {
-  console.log('userGenerator');
+userGenerator = () => {
+  return {
+    name: faker.name.findName(),
+    email: faker.internet.email(),
+  }
 }
 
-userGenerator();
+module.exports = {
+  userGenerator,
+}
